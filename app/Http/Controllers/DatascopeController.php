@@ -231,14 +231,24 @@ class DatascopeController extends Controller
             ], 422);
         }
 
-        $deposit = PayheroDeposit::where('checkout_request_id', $request->checkout_request_id)->first();
+        $deposit = PayheroDeposit::where('checkout_request_id', $request->checkout_request_id)
+        ->where('status', '==', 'pending')
+        ->first();
 
+        if($deposit) {
+           $deposit->update([
+                'status' => 'completed',
+                'result_desc' => 'STk push accepted',
+            ]);
+        }
         if (!$deposit) {
             return response()->json([
                 'success' => false,
                 'message' => 'Transaction not found',
             ], 404);
         }
+
+
 
         return response()->json([
             'success' => true,
@@ -252,4 +262,6 @@ class DatascopeController extends Controller
             'is_successful' => $deposit->status === 'success' && $deposit->result_code == 0,
         ]);
     }
+
+
 }
