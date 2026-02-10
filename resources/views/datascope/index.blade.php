@@ -1036,7 +1036,7 @@
             </div>
             
             <p>© <span id="currentYear"></span> Datascope Fuliza Limit Increase Service</p>
-            <p>Secured by M-Pesa • Powered by PayHero Technology</p>
+           
             
             <div class="footer-partners">
                 <div class="partner-badge">
@@ -1050,10 +1050,7 @@
                 </div>
             </div>
             
-            <p style="margin-top: 20px; font-size: 12px; color: #9CA3AF;">
-                This service is not affiliated with Safaricom PLC. Fuliza is a registered trademark of Safaricom PLC.<br>
-                All payments are processed securely via M-Pesa STK Push.
-            </p>
+           
         </div>
     </footer>
 
